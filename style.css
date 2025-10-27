@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f3f6fc;
+  color: #333;
+  padding: 40px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-size: 2.2em;
+  font-weight: 600;
+  color: #0078ff;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  position: relative;
+}
+
+/* Bar Chart */
+.bar-chart {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+
+.bar {
+  width: 20%;
+  background: #0078ff;
+  border-radius: 6px 6px 0 0;
+  animation: grow 2s ease forwards;
+  transform-origin: bottom;
+}
+
+@keyframes grow {
+  from { height: 0; }
+}
+
+/* Pie Chart */
+.pie-chart {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #0078ff 0deg 120deg,
+    #00d084 120deg 240deg,
+    #ff4f4f 240deg 360deg
+  );
+  animation: spin 3s ease-out;
+}
+
+@keyframes spin {
+  from { transform: rotate(-180deg); }
+  to { transform: rotate(0deg); }
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #666;
+  font-size: 14px;
+}
